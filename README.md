@@ -7,7 +7,7 @@ IOS app for searching Ecole 42 users and showing user profile
 </div>
 
 <h2>State diagram</h2>
-  <img width="900" alt="State diagram" src="https://github.com/vidkazan/42_swifty_companion/assets/33557107/9f2bdbda-9cad-4376-a347-38b8242fb234">
+<img width="794" alt="Screenshot 2023-07-03 at 14 42 01" src="https://github.com/vidkazan/42_swifty_companion/assets/33557107/a0cf726f-2e2d-4b1e-9fc2-079923c795be">
 <h2>Network layer</h2>
   <img src="https://github.com/vidkazan/42_swifty_companion/assets/33557107/9067abd9-2c13-49c5-9572-7932d7b1dcd9" width=300 height=636>
   <img src="https://github.com/vidkazan/42_swifty_companion/assets/33557107/744b46c2-d3ff-405e-87a8-710163e99d75" width=640 height=370>

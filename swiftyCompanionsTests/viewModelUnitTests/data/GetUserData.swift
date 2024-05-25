@@ -51,7 +51,7 @@ struct GetUserResultsLoginFcody {
 		isActive: Optional(true),
 		cursus_users: [
 			swiftyCompanions.CursusUser(
-				grade: nil,
+				skills: [], grade: nil,
 				level: Optional(5.97),
 				blackholedAt: nil,
 				beginAt: Optional("2021-03-01T08:00:00.000Z"),
@@ -61,6 +61,7 @@ struct GetUserResultsLoginFcody {
 					name: Optional("C Piscine"))
 			),
 			swiftyCompanions.CursusUser(
+				skills: [],
 				grade: Optional("Member"),
 				level: Optional(12.01),
 				blackholedAt: nil,

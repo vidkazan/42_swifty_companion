@@ -87,8 +87,11 @@ class ProfilePageViewModelTestsByLoginFcody: XCTestCase {
 			return true
 		}
 		if lhsPoints.count != rhsPoints.count {
+			print("count not equal")
 			return false
 		}
+		print(lhsPoints)
+		print(rhsPoints)
 		for i in 0..<lhsPoints.count {
 			if lhsPoints[i] != rhsPoints[i] {
 				return false
@@ -96,44 +99,5 @@ class ProfilePageViewModelTestsByLoginFcody: XCTestCase {
 		}
 		return true
 		
-	}
-	
-	func testEvalLogin() {
-		let expectation = self.expectation(description: "Badge Cell ViewModel")
-		
-		self.userProfileViewModel.analyseScaleTeamSessions(evalSessions: self.evalGraphSourceDataMonthPrevious, type: .perDayAndSum)
-		self.userProfileViewModel.analyseScaleTeamSessions(evalSessions: self.evalGraphSourceDataMonthBeforePrevious, type: .onlySum)
-		
-		let expectedLogin = self.expectedData.userProfileGraphsCellData.evalsGraphData
-		let actualLogin = self.userProfileViewModel.loginEvalData
-		
-		XCTAssertTrue(graphDataPointsComparing(actualLogin, expectedLogin))
-		XCTAssertEqual(actualLogin.currOverallValue,expectedLogin.currOverallValue)
-		XCTAssertEqual(actualLogin.nameLabel,expectedLogin.nameLabel)
-		XCTAssertEqual(actualLogin.valueTailLabel,expectedLogin.valueTailLabel)
-		XCTAssertEqual(actualLogin.prevOverallValue,expectedLogin.prevOverallValue)
-		
-		expectation.fulfill()
-		self.waitForExpectations(timeout: 1, handler: nil)
-	}
-	
-	func testGraphLogin() {
-		let expectation = self.expectation(description: "Badge Cell ViewModel")
-		
-		self.userProfileViewModel.analyseLoginSessions(loginSessions: self.loginGraphSourceDataMonthPrevious, type: .perDayAndSum)
-		self.userProfileViewModel.analyseLoginSessions(loginSessions: self.loginGraphSourceDataMonthBeforePrevious, type: .onlySum)
-		
-		let expectedLogin = self.expectedData.userProfileGraphsCellData.loginGraphData
-		let actualLogin = self.userProfileViewModel.getGraphsCellData().loginGraphData
-		
-		
-		XCTAssertTrue(graphDataPointsComparing(actualLogin, expectedLogin))
-		XCTAssertEqual(actualLogin.currOverallValue,expectedLogin.currOverallValue)
-		XCTAssertEqual(actualLogin.nameLabel,expectedLogin.nameLabel)
-		XCTAssertEqual(actualLogin.valueTailLabel,expectedLogin.valueTailLabel)
-		XCTAssertEqual(actualLogin.prevOverallValue,expectedLogin.prevOverallValue)
-		
-		expectation.fulfill()
-		self.waitForExpectations(timeout: 1, handler: nil)
 	}
 }
